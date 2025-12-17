@@ -17,7 +17,7 @@ stages:
          containerRegistry: 'hello01SC'
          repository: 'my-java-app'
          command: 'buildAndPush'
-         Dockerfile: 'DockerFile'
+         Dockerfile: '/DockerFile'
          tags: |
            $(Build.BuildId)
            latest
