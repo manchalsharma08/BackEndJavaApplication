@@ -52,5 +52,4 @@ stages:
          useClusterAdmin: true
          command: 'apply'
          useConfigurationFile: true
-         configuration: '/manifest/**'
-        
+         configuration: '$(System.DefaultWorkingDirectory)/manifest/*.yaml'
