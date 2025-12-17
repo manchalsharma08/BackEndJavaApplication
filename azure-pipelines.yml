@@ -17,21 +17,21 @@ stages:
          containerRegistry: 'hello01SC'
          repository: 'my-java-app'
          command: 'buildAndPush'
-         Dockerfile: '**/Dockerfile'
+         Dockerfile: 'DockerFile'
          tags: |
            $(Build.BuildId)
            latest
 
-- stage: deployImage
-  displayName: deploy to aks
-  jobs:
-  - job: 
-    steps:
-     - task: KubernetesManifest@1
-       inputs:
-         action: 'deploy'
-         connectionType: 'azureResourceManager'
-         azureSubscriptionConnection: 'ApplicationSC'
-         azureResourceGroup: 'MyRGc'
-         kubernetesCluster: 'myAKSCluster'
-         useClusterAdmin: true
+# - stage: deployImage
+#   displayName: deploy to aks
+#   jobs:
+#   - job: 
+#     steps:
+#      - task: KubernetesManifest@1
+#        inputs:
+#          action: 'deploy'
+#          connectionType: 'azureResourceManager'
+#          azureSubscriptionConnection: 'ApplicationSC'
+#          azureResourceGroup: 'MyRGc'
+#          kubernetesCluster: 'myAKSCluster'
+#          useClusterAdmin: true
