@@ -53,5 +53,4 @@ stages:
          command: 'apply'
          useConfigurationFile: true
          configuration: '/manifest/**'
-         secretType: 'dockerRegistry'
-         containerRegistryType: 'Azure Container Registry'
+        
