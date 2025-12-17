@@ -42,7 +42,7 @@ stages:
           
           - powershell: |
               Write-Host "Updating image in manifest"
-              (Get-Content manifest/deployment.yaml) -replace 'hello01-f8a3d9g6hzgqa7du.azurecr.io/my-java-app:v1', "hello01-f8a3d9g6hzgqa7du.azurecr.io/my-java-app:$(Build.BuildId)" | Set-Content manifest/deployment.yaml
+              (Get-Content "$(System.DefaultWorkingDirectory)/manifest/deployment.yaml") -replace 'hello01-f8a3d9g6hzgqa7du.azurecr.io/my-java-app:v1', "hello01-f8a3d9g6hzgqa7du.azurecr.io/my-java-app:$(Build.BuildId)" | Set-Content "$(System.DefaultWorkingDirectory)/manifest/deployment.yaml"
             displayName: 'Update manifest image tag'
  
           - task: Kubernetes@1
