@@ -40,7 +40,7 @@ stages:
          targetType: 'inline'
          script: |
            Write-Host "Updating image in manifest"
-                               (Get-Content manifests/deployment.yaml) -replace 'hello01-f8a3d9g6hzgqa7du.azurecr.io/my-java-app:v1', "hello01-f8a3d9g6hzgqa7du.azurecr.io/my-java-app:$(Build.BuildId)" | Set-Content manifests/deployment.yaml
+           (Get-Content manifest/deployment.yaml) -replace 'hello01-f8a3d9g6hzgqa7du.azurecr.io/my-java-app:v1', "hello01-f8a3d9g6hzgqa7du.azurecr.io/my-java-app:$(Build.BuildId)" | Set-Content manifest/deployment.yaml
 
      
      - task: Kubernetes@1
